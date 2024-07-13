@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import './Student.css'
 
 const StudentForm = () => {
-  const [boxgender,setgender] = useState(false)
     const studentDataObj = {
         name: '',
         email: '',
@@ -21,13 +20,11 @@ const StudentForm = () => {
     const studentSubmit = (e)=>{
         e.preventDefault()
         console.log(studentData)
-        setStudentData({...studentData,['']:''})
-        setgender(false)
         }
 
 
   return (
-    <div>
+    <div className='main'>
       <form action="" onSubmit={(e)=>studentSubmit(e)} >
             <input type="text" placeholder='Enter Your Full Name' value={name} name='name' onChange={(e)=>studentGetData(e)}/><br />
             <input type="email" placeholder='Enter Your Email' value={email} name='email'  onChange={(e)=>studentGetData(e)}/><br />  
@@ -38,11 +35,11 @@ const StudentForm = () => {
                 <option value="Junior">Junior</option>
                 <option value="Senior">Senior</option>
             </select>
-           <p> Male <input type="radio" checked={gender} value={'male'} name='gender' onChange={(e)=>setgender(e.target.checked)}/>
-            Female <input type="radio" checked={gender} value={'female'} name='gender'  onChange={(e)=>setgender(e.target.checked)} />
-            Other <input type="radio" checked={gender} value={'other'} name='gender'  onChange={(e)=>setgender(e.target.checked)}/></p>
+           <p> Male <input type="radio"  value={'male'} name='gender' onChange={(e)=>studentGetData(e)}/>
+            Female <input type="radio"  value={'female'} name='gender'  onChange={(e)=>studentGetData(e)}/>
+            Other <input type="radio" value={'other'} name='gender'  onChange={(e)=>studentGetData(e)}/></p>
             <br />
-            <input type="submit"  />
+            <input type="submit" style={{backgroundColor:"green",color:"white",width:"50%",fontSize:"24px",padding:"10px"}} />
       </form>
     </div>
   )
