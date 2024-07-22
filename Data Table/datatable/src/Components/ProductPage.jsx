@@ -32,15 +32,15 @@ const ProductPage = () => {
   return (
     <div>
 
-      <div>
-        <div style={{display:'grid',gridTemplateColumns:"repeat(3,1fr)",gap:'20px'}}> <select  onChange={(e)=>setCategories(e.target.value)} value={categories} name='category'>
+      <div  style={{display:'flex',justifyContent:'space-between',alignItems:"center",width:'90%',margin:"auto"}}>
+        <div> <select  onChange={(e)=>setCategories(e.target.value)} value={categories} name='category'>
             <option>select Your Category</option>
             <option value={"men's clothing"}>men's clothing</option>
             <option value={"jewelery"}>jewelery</option>
             <option value={"electronics"}>electronics</option>
             <option value={"women's clothing"}>women's clothing</option>
           </select></div>
-        <div><input type="text" placeholder='Search' onChange={(e)=>setSearch(e.target.value)}/></div>
+        <div><input type="text" placeholder='Search' onChange={(e)=>setSearch(e.target.value)} style={{display:"inline"}}/></div>
         <div>
           <button onClick={()=>setOrder('asc')}>LowToHigh</button>
           <button onClick={()=>setOrder('desc')}>HighToLow</button>
