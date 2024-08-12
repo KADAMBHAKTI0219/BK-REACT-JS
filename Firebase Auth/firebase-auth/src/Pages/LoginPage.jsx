@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { auth, provider } from '../Services/firebase';
+import { auth, provider } from '../Services/Firebase';
 import { createUserWithEmailAndPassword, deleteUser, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import GoogleButton from 'react-google-button';
 import { BiLogOut } from 'react-icons/bi';
