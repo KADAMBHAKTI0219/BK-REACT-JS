@@ -1,15 +1,15 @@
 
 import './App.css';
+import AllRoutes from './Components/AllRoutes';
 import Navigation from './Components/Navigation';
-import Products from './Components/Products';
+
 
 function App() {
   return (
     <div className="App">
       <Navigation/>
-      <Products/>
-    </div>
+      <AllRoutes/>
+    </div>  
   );
 }
-
-export default App;
+export default App
