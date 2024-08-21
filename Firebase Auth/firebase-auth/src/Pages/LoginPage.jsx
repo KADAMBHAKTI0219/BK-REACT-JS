@@ -80,7 +80,7 @@ const LoginPage = () => {
     };
   
   return (
-    <div>
+    <div className='forms'>
        <div className="toggleBtnDiv">
         <button onClick={() => setFormToggle(!formToggle)} className="toggleBtn">
           {formToggle ? <h4><IoCreate />Sign Up</h4> : <h4><RiLoginCircleFill />Sign In</h4>}
