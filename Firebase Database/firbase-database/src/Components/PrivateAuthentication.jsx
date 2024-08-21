@@ -6,7 +6,7 @@ import { auth } from "../Services/Firebase";
 const PrivateAuthentication = ({children}) => {
     const [user]= useAuthState(auth)
     if(!user){
-        return <Navigate to="/loginPage"/>
+        return <Navigate to="/login"/>
     }
   return children
 }

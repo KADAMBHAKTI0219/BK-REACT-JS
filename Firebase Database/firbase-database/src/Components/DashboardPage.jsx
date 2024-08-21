@@ -1,6 +1,7 @@
 import { collection, getDocs } from 'firebase/firestore'
 import React, { useEffect, useState } from 'react'
 import { db } from '../Services/Firebase'
+import { Link } from 'react-router-dom'
 
 const DashboardPage = () => {
     const [productsData,setProductsData]=useState([])
@@ -14,17 +15,18 @@ const DashboardPage = () => {
       getDataFromFirebase()
     },[])
   return (
-    <div>
-    {
-      productsData.map((el)=>(
-        <div key={el.id}>
-          <h1>{el.title}</h1>
-          <img src={el.image} alt={el.title} height={200} width={200}/>
-          <h3>{el.category}</h3>
-          <p>{el.description}</p>
-        </div>
-      ))
-    }
+    <div className="products-grid">
+    {productsData.map((el) => (
+      <div key={el.id} className="product-card">
+        <h2>{el.title}</h2>
+        <Link to={`/description/${el.id}`}>
+          <img src={el.image} alt={el.title} className="product-image" />
+        </Link>
+        <h3>{el.category}</h3>
+        <h3>{el.price}</h3>
+      
+      </div>
+    ))}
   </div>
   )
 }
