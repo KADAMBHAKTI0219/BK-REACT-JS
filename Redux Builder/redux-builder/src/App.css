@@ -36,3 +36,33 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* Counter */
+
+.counter {
+  width: 25%;
+  height: 230px;
+  border-radius: 20px;
+  margin:12% auto;
+  padding: 50px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+button{
+  padding: 10px ;
+  font-weight: 600;
+  font-size: 16px;
+  margin: 3%;
+  border-radius: 5px;
+}
+button:nth-child(1),button:nth-child(2){
+  width: 40%;
+
+}
+
+button:nth-child(3),button:nth-child(5){
+  width: 20%;
+}
+button:nth-child(4){
+  width: 40%;
+}
