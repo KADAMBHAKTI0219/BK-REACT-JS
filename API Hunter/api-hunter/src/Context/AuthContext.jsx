@@ -1,8 +1,7 @@
 import { createContext, useState } from "react";
 
-// CPC
 export const AuthContextApi = createContext();
-export const AuthContextApiProvider = ({children})=>{
+function AuthContextProvider({children}) {
     const [token,setToken] = useState('')
     const login = (value)=>{
         setToken(value)
@@ -12,3 +11,5 @@ export const AuthContextApiProvider = ({children})=>{
     }
     return <AuthContextApi.Provider value={{token,login,logOut}}>{children}</AuthContextApi.Provider>
 }
+
+export default AuthContextProvider;

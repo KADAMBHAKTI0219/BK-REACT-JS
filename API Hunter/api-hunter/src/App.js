@@ -1,15 +1,14 @@
+import AllRoutes from "./Routes/AllRoutes";
+import "./styles.css";
 
-import './App.css';
-import Navbar from './Components/Navbar';
-import {AllRoutes} from './Pages/AllRoutes';
-
-function App() {
+export default function App() {
   return (
     <div className="App">
-        <Navbar/>
-        <AllRoutes/>  
+    
+      <AllRoutes />
     </div>
   );
 }
 
-export default App;
+// authentication: reqres.in
+//
