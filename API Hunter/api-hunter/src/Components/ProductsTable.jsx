@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom"
+
+import ProductCard from "./ProductCard"
 
 function ProductsTable({data}){
 
@@ -14,14 +15,8 @@ function ProductsTable({data}){
                 </thead>
                 <tbody>
                     {/* map through the data */}
-                    {data.map(({id,brand,category,price})=>(
-                        <tr key={id}>
-                            <td>{id}</td>
-                            <td><Link to={`/singleProducts/${id}`} style={{textDecoration:'none'}}>{brand}</Link></td>
-                            <td>{category}</td>
-                            <td>{price}</td>
-                        </tr>
-
+                    {data.map((item)=>(
+                       <ProductCard key={item.id} id={item.id} brand={item.brand} category={item.category} price={item.price}/>
                     ))}
                 </tbody>
             </table>
