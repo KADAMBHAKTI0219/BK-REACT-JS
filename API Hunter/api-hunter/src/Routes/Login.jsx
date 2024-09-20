@@ -1,21 +1,26 @@
-import { AuthContextApi } from "../Context/AuthContext"
+
 import axios from 'axios'
 import React, { useContext, useState } from 'react'
 import { Link } from "react-router-dom"
+import { AuthContext } from '../Context/AuthContextApi'
+import Loader from '../Components/Loader'
 
 function Login() {
   const [email,setemail]= useState('')
   const [password,setpassword]= useState('')
-  const {login} = useContext(AuthContextApi)
+  const [isload,setIsLoad] = useState(false)
+  const {loginUser} = useContext(AuthContext)
   const handleSubmit= (e)=>{
     e.preventDefault()
     const userdata={email,password}
+    setIsLoad(true)
     axios.post('https://reqres.in/api/login',userdata).then(res=>{
       const token = res.data.token
-      login(token)
+      loginUser(token)
+      setIsLoad(false)
     }).catch(err=>console.log(err))
   }
-  return (
+  return isload ? <Loader/>:(
     <div>
       <form data-testid="login-form"  onSubmit={(e)=>handleSubmit(e)}>
         <div>

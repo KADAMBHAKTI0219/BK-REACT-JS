@@ -1,10 +1,10 @@
 import { Navigate } from "react-router-dom";
-import { AuthContextApi } from "../Context/AuthContext";
 import { useContext } from "react";
+import { AuthContext } from "../Context/AuthContextApi";
 
 function PrivateRoute({children}) {
-    const {token} = useContext(AuthContextApi)
-    return !token ? <Navigate to="/login" /> : children
+    const {auth}= useContext(AuthContext)
+    return !auth.isAuth ? <Navigate to="/login" /> : children
 }
 
 export default PrivateRoute;

@@ -12,7 +12,7 @@ function AllRoutes() {
         <Route path="/" element={<Home/>}/>
         <Route path="/dashboard" element={<PrivateRoute><Dashboard/></PrivateRoute>}/>
         <Route path="/login" element={<Login/>}/>
-        <Route path="/singleProducts/:id" element={<SingleProductPage/>}/>
+        <Route path="/products/:id" element={<SingleProductPage/>}/>
       </Routes>
     </div>
   );
