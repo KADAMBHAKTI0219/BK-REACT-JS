@@ -8,7 +8,7 @@ function Dashboard() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const {auth,logOutUser} = useContext(AuthContext)
+  const {auth,logoutUser} = useContext(AuthContext)
 
   const getProductData = async () => {
       try {
@@ -30,7 +30,7 @@ function Dashboard() {
     <div>
       <h2>Dashboard</h2>
       <div>
-        <button data-testid="logout-btn" onClick={logOutUser} style={{backgroundColor:'#059212',color:'white',border:'none',padding:'10px 20px',borderRadius:'10px',fontWeight:'600',fontSize:'18px'}}>Logout</button>
+        <button data-testid="logout-btn" onClick={logoutUser} style={{backgroundColor:'#059212',color:'white',border:'none',padding:'10px 20px',borderRadius:'10px',fontWeight:'600',fontSize:'18px'}}>Logout</button>
         <p>
           Token:
           <b data-testid="user-token">{auth.token}</b>
